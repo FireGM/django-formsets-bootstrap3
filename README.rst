@@ -1,6 +1,6 @@
-============================
+============================+
 Inline forms with bootstrap3
-============================
+============================+
 
 Form-inline-bootstrap a simple Django app to create form with forsets. 
 Use with crispy-forms. 
