@@ -28,7 +28,7 @@ models.py:
         company = models.ForeignKey(Company, related_name='employes')
 
 forms.py
-     
+
     class FormMixin(object):
         def __init__(self, *args, **kwargs):
             super(FormMixin, self).__init__(*args, **kwargs)
@@ -42,20 +42,19 @@ forms.py
     class EmployeForm(FormMixin, forms.ModelForm):
         class Meta:
             model = Employe
-
+    
     EmplyeFormSet = inlineformset_factory(Company, Employe, form=EmployeForm, extra=1)
-     `
 
 views.py
-    
+
     class CompanyFormMixin(object):
         model = Company
         formsets_class = [EmployeFormSet]
         form_class = CompanyForm
-
+    
     class CompanyCreate(CompanyFormMixin, FormsetMixin, CreateView):
         pass
-
+    
     class CompanyUpdate(CompanyFormMixin, FormsetMixin, UpdateView):
         is_update_view = True
 
@@ -67,15 +66,14 @@ company_form.html
     <form action="" method="post" enctype="multipart/form-data">
     {{ form.errors|as_crispy_errors }}
         {% main_form form formsets %}
-
+    
         {% render_formsets formsets %}
-
+    
       <div class="form-actions col-md-24">
          <button type="submit" class="btn btn-primary">Save</button>
        </div>
      </form>
-
+    
     {% empty_formsets formsets %}
-     `
 
 3. profit
