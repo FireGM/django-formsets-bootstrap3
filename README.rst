@@ -1,5 +1,7 @@
 ============================+
+
 Inline forms with bootstrap3
+
 ============================+
 
 Form-inline-bootstrap a simple Django app to create form with forsets. 
@@ -9,6 +11,8 @@ Quick start
 -----------
 
 1. Add 'django_form_inline__bootstrap3' to your INSTALLED_APPS setting like this:
+
+settings.py
 
     INSTALLED_APPS = (
         ...
