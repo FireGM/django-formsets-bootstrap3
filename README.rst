@@ -13,7 +13,7 @@ Quick start
 1. Add 'django_form_inline__bootstrap3' to your INSTALLED_APPS setting like this:
 
 settings.py
-
+    
     INSTALLED_APPS = (
         ...
         'crispy_forms',
