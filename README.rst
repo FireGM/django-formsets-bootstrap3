@@ -29,21 +29,21 @@ models.py:
 
 forms.py
      
-        class FormMixin(object):
-            def __init__(self, *args, **kwargs):
-                super(FormMixin, self).__init__(*args, **kwargs)
-                self.helper = FormHelper()
-                self.helper.form_tag = False
-        
-        class CompanyForm(FormMixin, forms.ModelForm):
-            class Meta:
-                model = Company
-        
-        class EmployeForm(FormMixin, forms.ModelForm):
-            class Meta:
-                model = Employe
+    class FormMixin(object):
+        def __init__(self, *args, **kwargs):
+            super(FormMixin, self).__init__(*args, **kwargs)
+            self.helper = FormHelper()
+            self.helper.form_tag = False
     
-        EmplyeFormSet = inlineformset_factory(Company, Employe, form=EmployeForm, extra=1)
+    class CompanyForm(FormMixin, forms.ModelForm):
+        class Meta:
+            model = Company
+    
+    class EmployeForm(FormMixin, forms.ModelForm):
+        class Meta:
+            model = Employe
+
+    EmplyeFormSet = inlineformset_factory(Company, Employe, form=EmployeForm, extra=1)
      `
 
 views.py
